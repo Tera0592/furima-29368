@@ -56,7 +56,7 @@
 | category_id        | integer     | null: false                    |
 | delivery_fee _id   | integer     | null: false                    |
 | delivery_place_id  | integer     | null: false                    |
-| delivery_date_id   | integer     | null: false                    |
+| delivery_day_id   | integer     | null: false                    |
 
 ### Association
 - has_many   :comments
