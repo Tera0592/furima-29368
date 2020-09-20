@@ -9,7 +9,7 @@ class Item < ApplicationRecord
   belongs_to_active_hash :place
   belongs_to_active_hash :day
 
-  validates :name, :introduction, :condition, :category, :fee, :place, :day,  presence: true
+  validates :name, :image, :introduction, :condition, :category, :fee, :place, :day,  presence: true
   validates :price, format: { with: /\A[0-9]+\z/i }
   #ジャンルの選択が「--」の時は保存できないようにする
   validates :condition_id, numericality: { other_than: 1 } 
