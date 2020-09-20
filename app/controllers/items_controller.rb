@@ -3,7 +3,7 @@ class ItemsController < ApplicationController
     @item = Item.new
   end
   def new
-    @item = Item.new
+    @item = Item.all.order(id: "DESC")
   end
 
   def create
