@@ -11,7 +11,7 @@ class Item < ApplicationRecord
 
   validates :name, :image, :introduction, :condition, :category, :fee, :place, :day, presence: true
   validates :price, format: { with: /\A[0-9]+\z/i }
-  validates_inclusion_of :price, in:300..9999999
+  validates_inclusion_of :price, in: 300..9_999_999
   # ジャンルの選択が「--」の時は保存できないようにする
   validates :condition_id, numericality: { other_than: 1 }
   validates :category_id,  numericality: { other_than: 1 }

@@ -70,52 +70,51 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include('Price is invalid')
       end
 
-      #ジャンルの選択が「--」の時は出品ができないテスト
-      
+      # ジャンルの選択が「--」の時は出品ができないテスト
+
       it 'カテゴリーの情報が[--]の時、出品ができない' do
         @item.category_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Category must be other than 1")
+        expect(@item.errors.full_messages).to include('Category must be other than 1')
       end
 
       it '商品の状態の情報が[--]の時、出品ができない' do
         @item.condition_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Condition must be other than 1")
+        expect(@item.errors.full_messages).to include('Condition must be other than 1')
       end
 
       it '配送料の負担についての情報が[--]の時、出品ができない' do
         @item.fee_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Fee must be other than 1")
+        expect(@item.errors.full_messages).to include('Fee must be other than 1')
       end
 
       it '発送元の地域についての情報が[--]の時、出品ができない' do
         @item.place_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Place must be other than 1")
+        expect(@item.errors.full_messages).to include('Place must be other than 1')
       end
 
       it '発送までの日数についての情報が[--]の時、出品ができない' do
         @item.day_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Day must be other than 1")
+        expect(@item.errors.full_messages).to include('Day must be other than 1')
       end
 
-      #販売価格関連のテスト
+      # 販売価格関連のテスト
 
       it '販売価格が299円以下では出品ができない' do
         @item.price = 299
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price is not included in the list")
+        expect(@item.errors.full_messages).to include('Price is not included in the list')
       end
 
       it '販売価格が10,000,000円以上では出品ができない' do
-        @item.price = 10000000
+        @item.price = 10_000_000
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price is not included in the list")
+        expect(@item.errors.full_messages).to include('Price is not included in the list')
       end
-
     end
   end
 end
