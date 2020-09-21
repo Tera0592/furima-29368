@@ -10,7 +10,8 @@ function price_calc() {
     profit.innerHTML = calcProfit ;
   });
 }
-window.addEventListener('load',price_calc);
+setInterval(price_calc,1000);
+
 
 
 
