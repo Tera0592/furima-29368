@@ -1,10 +1,17 @@
 function price_calc() {
-  const Selling_price = document.getElementById("item-price")
-  const Tax_price = document.getElementById("add-tax-price")
-  const Profit = document.getElementById("profit")
-  Tax_price.System.out.printIn(Selling_price*0.1)
-  Profit.System.out.printIn(Selling_price*0.9)
+
+  const sellingPrice = document.getElementById("item-price");
+  const taxPrice = document.getElementById("add-tax-price");
+  const profit = document.getElementById("profit");
+  sellingPrice.addEventListener("keyup", () => {
+    const calcTax = sellingPrice.value * 0.1 ;
+    const calcProfit = sellingPrice.value * 0.9 ;
+    taxPrice.innerHTML = calcTax ;
+    profit.innerHTML = calcProfit ;
+  });
 }
-window.addEventListener("oninput",price_calc)
+window.addEventListener('load',price_calc);
+
+
 
 
