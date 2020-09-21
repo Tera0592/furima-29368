@@ -7,7 +7,6 @@ RSpec.describe Item, type: :model do
   end
 
   describe '商品を出品する' do
-    
     context '商品出品がうまくいくとき' do
       it '全ての項目が存在すれば正常に出品ができる' do
         expect(@item).to be_valid
@@ -16,7 +15,7 @@ RSpec.describe Item, type: :model do
 
     context '商品出品がうまくいかないとき' do
       # ~がなければ出品ができない
-      
+
       it '商品名がなければ登録ができない' do
         @item.name = nil
         @item.valid?
@@ -68,10 +67,8 @@ RSpec.describe Item, type: :model do
       it '販売価格の情報がなければ登録ができない' do
         @item.price = nil
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price is invalid")
+        expect(@item.errors.full_messages).to include('Price is invalid')
       end
-
     end
   end
-  
 end
