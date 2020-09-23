@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:show, :edit]
+  before_action :set_item, only: [:show, :edit, :update]
   def index
     @item = Item.all.order(id: 'DESC')
   end
@@ -11,7 +11,7 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save
-      redirect_to root_path
+       redirect_to root_path
     else
       render :new
     end
@@ -24,9 +24,11 @@ class ItemsController < ApplicationController
   end
 
   def update
-    item = Item.find(params[:id])
-    item.update(item_params)
-    redirect_to root_path
+    if @item.update(item_params)
+       redirect_to root_path
+    else
+      render :edit
+    end
   end
 
   def destroy
