@@ -1,15 +1,19 @@
 class OrdersController < ApplicationController
   def index
     @item = Item.find(params[:item_id])
-    @order = OrderAddress.new(order_params)
+    @order = OrderAddress.new
   end
 
   def create
-    binding.pry
+    @order = OrderAddress.new(order_params)
+    if @order.save
+      redirect_to root_path
+    end
   end
 
   private
   def order_params
-    params.permit(:item_id, :postal_code, :prefecture, :city, :house_number, :builiding_name, :phone_number).merge(user_id: current_user.id)
+    params.require(:order_address).permit(:postal_code, :prefecture, :city, :house_number, :builiding_name, :phone_number).merge(user_id: current_user.id, item_id: params[:item_id], token: params[:token])
   end
+  
 end
