@@ -1,9 +1,7 @@
 const pay = () => {
-  console.log("pay関数実行の確認")
   Payjp.setPublicKey("pk_test_34d35352760f7be6ecfcaa57");
   const form = document.getElementById("charge-form");
   form.addEventListener("submit", (e) => {
-    console.log("イベント発火の確認");
     e.preventDefault();
 
     const formResult = document.getElementById("charge-form");
@@ -15,10 +13,9 @@ const pay = () => {
       exp_month: document.getElementById("card-exp-month").value,
       exp_year: `20${document.getElementById("card-exp-year").value}`,
     };
-    console.log(card);
+    
     Payjp.createToken(card, (status, response) => {
-      console.log(status)
-      console.log(response)
+      
       if (status == 200) {
         const token = response.id;
         const renderDom = document.getElementById("charge-form");
