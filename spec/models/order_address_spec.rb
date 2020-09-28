@@ -69,6 +69,18 @@ RSpec.describe OrderAddress, type: :model do
       end
       # postal_codeのテスト
 
+      it 'postal_codeの-の前が4桁では保存ができない' do
+        @order_address.postal_code = '1234-5678'
+        @order_address.valid?
+        expect(@order_address.errors.full_messages).to include("Postal code is invalid. Include hyphen(-)")
+      end
+
+      it 'postal_codeの-の後が5桁では保存ができない' do
+        @order_address.postal_code = '123-45678'
+        @order_address.valid?
+        expect(@order_address.errors.full_messages).to include("Postal code is invalid. Include hyphen(-)")
+      end
+
       it 'postal_codeが半角のハイフンを含んだ正しい形式でないと保存できないこと' do
         @order_address.postal_code = '1234567'
         @order_address.valid?
