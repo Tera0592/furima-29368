@@ -5,5 +5,6 @@ FactoryBot.define do
     city { '横浜市緑区' }
     house_number { '青山1-1-1' }
     phone_number { '09012345678' }
+    token { 'pk_test_1234abcd' }
   end
 end

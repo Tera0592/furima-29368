@@ -45,6 +45,12 @@ RSpec.describe OrderAddress, type: :model do
         @order_address.valid?
         expect(@order_address.errors.full_messages).to include("Phone number can't be blank", "Phone number is invalid")
       end
+
+      it 'tokenがなければ保存ができないこと' do
+        @order_address.token = nil
+        @order_address.valid?
+        expect(@order_address.errors.full_messages).to include("Token can't be blank")
+      end
       
       # acitve_hash関連のテスト
 
