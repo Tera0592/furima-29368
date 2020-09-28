@@ -60,6 +60,13 @@ RSpec.describe OrderAddress, type: :model do
         expect(@order_address.errors.full_messages).to include("Prefecture can't be blank")
       end
 
+      # phone_number関連のテスト
+
+      it 'phone_numberが12桁では保存ができない' do
+        @order_address.phone_number = '012012345678'
+        @order_address.valid?
+        expect(@order_address.errors.full_messages).to include("Phone number is invalid")
+      end
       # postal_codeのテスト
 
       it 'postal_codeが半角のハイフンを含んだ正しい形式でないと保存できないこと' do
