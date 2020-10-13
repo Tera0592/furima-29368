@@ -94,6 +94,14 @@
       <%= f.submit "コメントする", class:"comment-btn" %>
     <% end %>
   </div>
+  <div id='messages'>
+  <% if @messages %>
+    <h4>＜コメント一覧＞</h4>
+    <% @messages.reverse_each do |message| %>
+    <p><%= message.text %></p>
+  <% end %>
+  <% end %>
+  </div>
   <div class="links">
     <a href="#" class="change-item-btn">
       ＜ 前の商品
