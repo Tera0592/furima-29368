@@ -35,8 +35,18 @@ https://furima-29368.herokuapp.com/
 ### トップページ
 
 #### No1
+<img width="1426" alt="top-page-1" src="https://user-images.githubusercontent.com/69949838/104540798-8ea71e00-5663-11eb-8ee1-9d707078c5ca.png">
 
 #### No2
+<img width="1420" alt="top-page-2" src="https://user-images.githubusercontent.com/69949838/104540820-9a92e000-5663-11eb-96aa-0d1b53b29dc2.png">
+
+### 新規登録画面
+
+#### No1
+<img width="1422" alt="user-sign-1" src="https://user-images.githubusercontent.com/69949838/104540839-aaaabf80-5663-11eb-8461-d07321247e34.png">
+
+#### No2
+<img width="1416" alt="user-sign-2" src="https://user-images.githubusercontent.com/69949838/104540863-b5fdeb00-5663-11eb-97a0-f1f71597d972.png">
 
 - 新規登録方法
   - トップページから新規登録ボタン押下→ユーザー情報入力→ユーザー登録完了
@@ -46,8 +56,10 @@ https://furima-29368.herokuapp.com/
 ### 出品画面
 
 #### No1
+<img width="1419" alt="sell-item-1" src="https://user-images.githubusercontent.com/69949838/104540880-c1e9ad00-5663-11eb-9489-6fddf53bbbe3.png">
 
 #### No2
+<img width="1424" alt="sell-item-2" src="https://user-images.githubusercontent.com/69949838/104540892-c9a95180-5663-11eb-90b8-7e9d2d7f7445.png">
 
 - 商品出品方法
   - テストアカウントでログイン→トップページから出品ボタン押下→商品情報入力→商品出品
@@ -57,8 +69,10 @@ https://furima-29368.herokuapp.com/
 ### 購入画面
 
 #### No1
+<img width="1423" alt="buy-item-1" src="https://user-images.githubusercontent.com/69949838/104540914-d4fc7d00-5663-11eb-8ef3-0a010bf968b6.png">
 
 #### No2
+<img width="1425" alt="buy-item-2" src="https://user-images.githubusercontent.com/69949838/104540918-db8af480-5663-11eb-9a7c-5dbf7043fe19.png">
 
 - 商品購入方法
   - テストアカウントでログイン→トップページから商品検索→商品選択→商品購入
